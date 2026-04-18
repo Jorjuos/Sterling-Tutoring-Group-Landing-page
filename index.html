@@ -1,0 +1,1445 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sterling Tutoring Group — Results-Driven Tutoring for High School Students</title>
+  <meta name="description" content="Sterling Tutoring Group provides bespoke one-on-one and small group tutoring for Year 7–12 students across Australia. 90+ ATAR tutors. Real results. No shortcuts." />
+  <meta name="author" content="Sterling Tutoring Group" />
+  <meta name="keywords" content="tutoring Australia, ATAR tutoring, HSC tutoring, VCE tutoring, high school tutor, Year 12 tutoring, maths tutor, English tutor, business studies tutor, economics tutor" />
+  <meta property="og:title" content="Sterling Tutoring Group — Results-Driven Tutoring" />
+  <meta property="og:description" content="Bespoke tutoring for high school students who deserve better results. 90+ ATAR qualified tutors across Australia." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="logo.svg" type="image/svg+xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========================================
+       CSS RESET & VARIABLES
+    ======================================== */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #0A0A0A;
+      --black-light: #111111;
+      --black-card: #161616;
+      --white: #FAFAFA;
+      --white-muted: #9A9A9A;
+      --white-dim: #6A6A6A;
+      --blue: #5DADE2;
+      --blue-glow: rgba(93, 173, 226, 0.12);
+      --blue-glow-strong: rgba(93, 173, 226, 0.25);
+      --blue-dark: #3498DB;
+      --border: rgba(255, 255, 255, 0.06);
+      --border-blue: rgba(93, 173, 226, 0.2);
+
+      --font-display: 'Outfit', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+
+      --container-padding: 20px;
+      --section-padding: 80px;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--black);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+    }
+
+    /* ========================================
+       UTILITY
+    ======================================== */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-left: var(--container-padding);
+      padding-right: var(--container-padding);
+    }
+
+    /* Scroll reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
+    /* ========================================
+       TYPOGRAPHY
+    ======================================== */
+    h1, h2, h3, h4, h5 {
+      font-family: var(--font-display);
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+    }
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 700;
+    }
+
+    h3 {
+      font-size: 1.35rem;
+      font-weight: 600;
+    }
+
+    h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--white-muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .accent {
+      color: var(--blue);
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* ========================================
+       NAVIGATION
+    ======================================== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(10, 10, 10, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.3s ease;
+    }
+
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 180px;
+    }
+
+    .nav-logo {
+      height: 150px;
+      width: auto;
+      background: rgba(255, 255, 255, 0.92);
+      padding: 10px 60px;
+      border-radius: 14px;
+    }
+
+    .nav-cta {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 12px 28px;
+      background: var(--blue);
+      color: var(--black);
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-cta:hover {
+      background: var(--blue-dark);
+      box-shadow: 0 0 24px var(--blue-glow-strong);
+    }
+
+    /* ========================================
+       SECTION 1 — HERO
+    ======================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 220px;
+      padding-bottom: var(--section-padding);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero-content {
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      border: 1px solid var(--border-blue);
+      border-radius: 100px;
+      font-family: var(--font-display);
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--blue);
+      margin-bottom: 28px;
+      background: var(--blue-glow);
+    }
+
+    .hero-badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero h1 {
+      margin-bottom: 20px;
+    }
+
+    .hero h1 .line {
+      display: block;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--white-muted);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-form-wrapper {
+      background: var(--black-card);
+      border: 1px solid var(--border-blue);
+      border-radius: 16px;
+      padding: 32px 24px;
+      position: relative;
+    }
+
+    .hero-form-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: 17px;
+      background: linear-gradient(135deg, var(--blue-glow-strong), transparent 60%);
+      z-index: -1;
+    }
+
+    .hero-form-label {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .hero-form-sublabel {
+      font-size: 0.9rem;
+      color: var(--white-dim);
+      margin-bottom: 20px;
+    }
+
+    /* Typeform container */
+    .hero-form-wrapper [data-tf-live] {
+      width: 100%;
+      min-height: 400px;
+    }
+
+    /* ========================================
+       SECTION 2 — COMPELLING QUESTION
+    ======================================== */
+    .compelling {
+      padding: 100px 0;
+      background: var(--black);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .compelling::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 20% 50%, rgba(93, 173, 226, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(93, 173, 226, 0.03) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .compelling-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .compelling h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      line-height: 1.25;
+    }
+
+    .compelling p {
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+      line-height: 1.8;
+    }
+
+    .compelling .divider {
+      width: 48px;
+      height: 2px;
+      background: var(--blue);
+      margin: 0 auto 40px;
+      border-radius: 2px;
+    }
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 18px 36px;
+      background: var(--blue);
+      color: var(--black);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      width: 100%;
+      justify-content: center;
+    }
+
+    .cta-button:hover {
+      background: var(--blue-dark);
+      box-shadow: 0 0 32px var(--blue-glow-strong);
+      transform: translateY(-1px);
+    }
+
+    .cta-button svg {
+      width: 18px;
+      height: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .cta-button:hover svg {
+      transform: translateX(3px);
+    }
+
+    /* ========================================
+       SECTION 3 — THE SERVICE
+    ======================================== */
+    .service {
+      padding: var(--section-padding) 0;
+      background: var(--black-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .service-header p {
+      max-width: 560px;
+      margin: 16px auto 0;
+    }
+
+    .subjects-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    .subject-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 22px;
+      background: var(--black-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .subject-item:hover {
+      border-color: var(--border-blue);
+      background: rgba(93, 173, 226, 0.04);
+    }
+
+    .subject-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .subject-name {
+      font-family: var(--font-display);
+      font-weight: 500;
+      font-size: 1rem;
+      color: var(--white);
+    }
+
+    .service-note {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.95rem;
+      color: var(--white-dim);
+    }
+
+    .service-note strong {
+      color: var(--white-muted);
+    }
+
+    /* ========================================
+       SECTION 4 — THE SYSTEM (INCLUSIONS)
+    ======================================== */
+    .system {
+      padding: var(--section-padding) 0;
+      background: var(--black);
+    }
+
+    .system-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .system-header p {
+      max-width: 560px;
+      margin: 16px auto 0;
+    }
+
+    .inclusions-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .inclusion-card {
+      padding: 32px 28px;
+      background: var(--black-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      transition: all 0.4s ease;
+    }
+
+    .inclusion-card:hover {
+      border-color: var(--border-blue);
+      box-shadow: 0 0 40px var(--blue-glow);
+    }
+
+    .inclusion-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--blue-glow);
+      border: 1px solid var(--border-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .inclusion-icon svg {
+      width: 24px;
+      height: 24px;
+      color: var(--blue);
+    }
+
+    .inclusion-card h3 {
+      margin-bottom: 10px;
+      color: var(--white);
+    }
+
+    .inclusion-card p {
+      font-size: 0.95rem;
+      color: var(--white-muted);
+      line-height: 1.65;
+    }
+
+    /* ========================================
+       SECTION 5 — CLIENT PROOF
+    ======================================== */
+    .proof {
+      padding: var(--section-padding) 0;
+      background: var(--black-light);
+      border-top: 1px solid var(--border);
+    }
+
+    .proof-header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .proof-header p {
+      max-width: 560px;
+      margin: 16px auto 0;
+    }
+
+    /* Win Cards */
+    .wins-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--blue);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .wins-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 56px;
+    }
+
+    .win-card {
+      padding: 24px 20px;
+      background: var(--black-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .win-card:hover {
+      border-color: var(--border-blue);
+    }
+
+    .win-metric {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 1.5rem;
+      color: var(--blue);
+      margin-bottom: 4px;
+      letter-spacing: -0.03em;
+    }
+
+    .win-arrow {
+      color: var(--white-dim);
+      font-size: 1.3rem;
+      margin: 0 2px;
+    }
+
+    .win-subject {
+      font-size: 0.8rem;
+      color: var(--white-dim);
+      font-weight: 500;
+      margin-top: 6px;
+    }
+
+    /* Testimonials */
+    .testimonials-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--blue);
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .testimonials-carousel {
+      display: flex;
+      gap: 16px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding-bottom: 16px;
+      scrollbar-width: none;
+    }
+
+    .testimonials-carousel::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial-card {
+      flex: 0 0 85%;
+      max-width: 400px;
+      scroll-snap-align: start;
+      padding: 28px 24px;
+      background: var(--black-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      border-color: var(--border-blue);
+    }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+      color: var(--white-muted);
+      line-height: 1.7;
+      flex: 1;
+      font-style: italic;
+    }
+
+    .testimonial-quote::before {
+      content: '\201C';
+      font-size: 2rem;
+      line-height: 0;
+      vertical-align: -0.35em;
+      color: var(--blue);
+      margin-right: 4px;
+      font-style: normal;
+    }
+
+    .testimonial-meta {
+      margin-top: 20px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--blue-glow);
+      border: 1px solid var(--border-blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.75rem;
+      color: var(--blue);
+      flex-shrink: 0;
+    }
+
+    .testimonial-name {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--white);
+    }
+
+    .testimonial-detail {
+      font-size: 0.78rem;
+      color: var(--white-dim);
+    }
+
+    /* ========================================
+       ULTIMATUM SECTION
+    ======================================== */
+    .ultimatum {
+      padding: 100px 0;
+      background: var(--black);
+      border-top: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ultimatum::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--blue-glow) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .ultimatum-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .ultimatum-header h2 {
+      font-size: 2rem;
+      margin-bottom: 8px;
+    }
+
+    .ultimatum-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .ultimatum-card {
+      padding: 36px 32px;
+      border-radius: 16px;
+      text-align: center;
+      transition: all 0.4s ease;
+    }
+
+    .ultimatum-card--left {
+      background: var(--black-card);
+      border: 1px solid rgba(220, 50, 50, 0.25);
+      box-shadow: 0 0 40px rgba(220, 50, 50, 0.1);
+    }
+
+    .ultimatum-card--left:hover {
+      box-shadow: 0 0 60px rgba(220, 50, 50, 0.18);
+      border-color: rgba(220, 50, 50, 0.4);
+    }
+
+    .ultimatum-card--right {
+      background: var(--black-card);
+      border: 1px solid rgba(52, 211, 153, 0.35);
+      box-shadow: 0 0 40px rgba(52, 211, 153, 0.18);
+    }
+
+    .ultimatum-card--right:hover {
+      box-shadow: 0 0 60px rgba(52, 211, 153, 0.3);
+      border-color: rgba(52, 211, 153, 0.6);
+    }
+
+    .ultimatum-icon {
+      font-size: 2.2rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .ultimatum-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .ultimatum-card--left h3 {
+      color: var(--white-dim);
+    }
+
+    .ultimatum-card--right h3 {
+      color: #34D399;
+    }
+
+    .ultimatum-card p {
+      font-size: 0.95rem;
+      margin-bottom: 20px;
+    }
+
+    .ultimatum-card--left p {
+      color: var(--white-dim);
+    }
+
+    .ultimatum-link {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--white-dim);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ultimatum-card--right .ultimatum-link {
+      color: #34D399;
+    }
+
+    .ultimatum-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.3s ease;
+    }
+
+    .ultimatum-card:hover .ultimatum-link svg {
+      transform: translateX(3px);
+    }
+
+    @media (min-width: 640px) {
+      .ultimatum-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ultimatum-header h2 {
+        font-size: 2.4rem;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .ultimatum {
+        padding: 120px 0;
+      }
+
+      .ultimatum-header h2 {
+        font-size: 3rem;
+      }
+    }
+
+    /* ========================================
+       FOOTER
+    ======================================== */
+    .footer {
+      padding: 48px 0;
+      border-top: 1px solid var(--border);
+      background: var(--black);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      height: 120px;
+      width: auto;
+      background: rgba(255, 255, 255, 0.88);
+      padding: 8px 48px;
+      border-radius: 12px;
+    }
+
+    .footer-text {
+      font-size: 0.85rem;
+      color: var(--white-dim);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--white-dim);
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--blue);
+    }
+
+    /* ========================================
+       RESPONSIVE — TABLET (640px+)
+    ======================================== */
+    @media (min-width: 640px) {
+      :root {
+        --container-padding: 32px;
+      }
+
+      h1 { font-size: 3rem; }
+      h2 { font-size: 2.4rem; }
+
+      .hero-sub {
+        font-size: 1.15rem;
+      }
+
+      .subjects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .inclusions-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .wins-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .testimonial-card {
+        flex: 0 0 60%;
+      }
+
+      .cta-button {
+        width: auto;
+      }
+
+      .compelling {
+        padding: 120px 0;
+      }
+
+      .compelling h2 {
+        font-size: 2.4rem;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE — LAPTOP (1024px+)
+    ======================================== */
+    @media (min-width: 1024px) {
+      :root {
+        --section-padding: 100px;
+      }
+
+      h1 { font-size: 3.6rem; }
+      h2 { font-size: 2.8rem; }
+
+      .hero-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+      }
+
+      .hero-content {
+        text-align: left;
+      }
+
+      .hero-sub {
+        margin-left: 0;
+        margin-right: 0;
+      }
+
+      .hero-badge {
+        margin-left: 0;
+      }
+
+      .subjects-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .inclusions-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .compelling {
+        padding: 140px 0;
+      }
+
+      .compelling h2 {
+        font-size: 3rem;
+      }
+
+      /* Desktop masonry-style grid for testimonials */
+      .testimonials-carousel {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        overflow: visible;
+        padding-bottom: 0;
+      }
+
+      .testimonial-card {
+        flex: none;
+        max-width: none;
+      }
+
+      .wins-grid {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 16px;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE — DESKTOP (1280px+)
+    ======================================== */
+    @media (min-width: 1280px) {
+      h1 { font-size: 4rem; }
+
+      .container {
+        max-width: 1200px;
+      }
+
+      .subjects-grid {
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+
+    /* ========================================
+       NOISE TEXTURE OVERLAY
+    ======================================== */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.025;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================
+       NAVIGATION
+  ============================ -->
+  <nav class="nav">
+    <div class="container nav-inner">
+      <img src="logo.png" alt="Sterling Tutoring Group" class="nav-logo" />
+      <a href="#hero-form" class="nav-cta">Get Started</a>
+    </div>
+  </nav>
+
+  <!-- ============================
+       SECTION 1 — HERO
+  ============================ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge reveal reveal-delay-1">
+            <span class="hero-badge-dot"></span>
+            Spots filling quickly!
+          </div>
+          <h1 class="reveal reveal-delay-2">
+            <span class="line">Your grades don't</span>
+            <span class="line">reflect what you're</span>
+            <span class="line"><span class="accent">capable of.</span></span>
+          </h1>
+          <p class="hero-sub reveal reveal-delay-3">
+            Sterling Tutoring Group pairs you with a dedicated tutor who's already dominated the system you're navigating. One-on-one. Bespoke. Built around you.
+          </p>
+        </div>
+        <div class="reveal reveal-delay-4" id="hero-form">
+          <div class="hero-form-wrapper">
+            <p class="hero-form-label">Ready to see real change?</p>
+            <p class="hero-form-sublabel">Fill this out and we'll be in touch right away.</p>
+            <div data-tf-live="01KPBAEZS50DYZTRQQDH4DD7D5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SECTION 2 — COMPELLING QUESTION
+  ============================ -->
+  <section class="compelling">
+    <div class="container">
+      <div class="compelling-inner">
+        <div class="divider reveal"></div>
+        <h2 class="reveal reveal-delay-1">
+          What if the only thing between you and the marks you deserve is
+          <span class="accent">the right guidance?</span>
+        </h2>
+        <p class="reveal reveal-delay-2">
+          You're not lazy. You're not incapable. You've just never had someone sit across from you who genuinely understands your situation — your assessments, your exams, your pressure — and knows exactly how to help. That's what we do.
+        </p>
+        <a href="#hero-form" class="cta-button reveal reveal-delay-3">
+          I'm Ready to Act
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SECTION 3 — THE SERVICE
+  ============================ -->
+  <section class="service" id="subjects">
+    <div class="container">
+      <div class="service-header">
+        <h2 class="reveal">Every Subject. <span class="accent">One Standard.</span></h2>
+        <p class="reveal reveal-delay-1">
+          From Year 7 through to Year 12. Whatever the subject, whatever the syllabus — we've been there and we've excelled.
+        </p>
+      </div>
+      <div class="subjects-grid">
+        <div class="subject-item reveal">
+          <span class="subject-dot"></span>
+          <span class="subject-name">English</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-1">
+          <span class="subject-dot"></span>
+          <span class="subject-name">Mathematics</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-1">
+          <span class="subject-dot"></span>
+          <span class="subject-name">Business Studies</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-2">
+          <span class="subject-dot"></span>
+          <span class="subject-name">Economics</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-2">
+          <span class="subject-dot"></span>
+          <span class="subject-name">Legal Studies</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-3">
+          <span class="subject-dot"></span>
+          <span class="subject-name">Biology</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-3">
+          <span class="subject-dot"></span>
+          <span class="subject-name">Chemistry</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-4">
+          <span class="subject-dot"></span>
+          <span class="subject-name">Physics</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-4">
+          <span class="subject-dot"></span>
+          <span class="subject-name">PDHPE</span>
+        </div>
+        <div class="subject-item reveal reveal-delay-5">
+          <span class="subject-dot"></span>
+          <span class="subject-name">History</span>
+        </div>
+      </div>
+      <p class="service-note reveal">
+        Don't see your subject? <strong>Get in touch</strong> — our tutor panel covers more than what's listed here.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================
+       SECTION 4 — THE SYSTEM (INCLUSIONS)
+  ============================ -->
+  <section class="system" id="system">
+    <div class="container">
+      <div class="system-header">
+        <h2 class="reveal">The Entire <span class="accent">Support System.</span></h2>
+        <p class="reveal reveal-delay-1">
+          This isn't just tutoring. It's a complete structure built around getting you from where you are to where you need to be.
+        </p>
+      </div>
+      <div class="inclusions-grid">
+
+        <div class="inclusion-card reveal">
+          <div class="inclusion-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+            </svg>
+          </div>
+          <h3>Personalised Session Plans</h3>
+          <p>Every session is tailored to your specific syllabus, your weak points, and your upcoming assessments. No generic worksheets. No filler.</p>
+        </div>
+
+        <div class="inclusion-card reveal reveal-delay-1">
+          <div class="inclusion-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3>90+ ATAR Qualified Tutors</h3>
+          <p>Every tutor on our panel scored 90 or above in their ATAR and is currently studying at university in Law, Medicine, or Engineering.</p>
+        </div>
+
+        <div class="inclusion-card reveal reveal-delay-2">
+          <div class="inclusion-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/>
+            </svg>
+          </div>
+          <h3>Exam Strategy &amp; Mindset</h3>
+          <p>We don't just teach content — we prepare you for the pressure. Study technique, time management, and the mental shift from fixed to growth mindset.</p>
+        </div>
+
+        <div class="inclusion-card reveal reveal-delay-3">
+          <div class="inclusion-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <h3>Career Direction &amp; Guidance</h3>
+          <p>Not sure what comes after school? We help you explore your options, find the right course, and build a clear path toward your dream university and career.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SECTION 5 — CLIENT PROOF
+  ============================ -->
+  <section class="proof" id="results">
+    <div class="container">
+      <div class="proof-header">
+        <h2 class="reveal">Real Students. <span class="accent">Real Results.</span></h2>
+        <p class="reveal reveal-delay-1">
+          We don't need to convince you with promises. Here's what our clients actually said — in their own words.
+        </p>
+      </div>
+
+      <!-- Win Cards -->
+      <p class="wins-label reveal">Results at a Glance</p>
+      <div class="wins-grid">
+        <div class="win-card reveal">
+          <div class="win-metric">12 <span class="win-arrow">&rarr;</span> 17<span style="font-size:0.7em">/20</span></div>
+          <div class="win-subject">Year 10 English</div>
+        </div>
+        <div class="win-card reveal reveal-delay-1">
+          <div class="win-metric">77% <span class="win-arrow">&rarr;</span> 87.5%</div>
+          <div class="win-subject">Year 12 Assessment</div>
+        </div>
+        <div class="win-card reveal reveal-delay-1">
+          <div class="win-metric">66 <span class="win-arrow">&rarr;</span> 93%</div>
+          <div class="win-subject">Year 11 Business</div>
+        </div>
+        <div class="win-card reveal reveal-delay-2">
+          <div class="win-metric">92%</div>
+          <div class="win-subject">Year 7 Task 1</div>
+        </div>
+        <div class="win-card reveal reveal-delay-2">
+          <div class="win-metric">Fail <span class="win-arrow">&rarr;</span> 85%</div>
+          <div class="win-subject">Maths (Class Avg: 55%)</div>
+        </div>
+        <div class="win-card reveal reveal-delay-3">
+          <div class="win-metric">54<span style="font-size:0.7em">/60</span></div>
+          <div class="win-subject">Economics Task 1</div>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <p class="testimonials-label reveal">What Our Clients Say</p>
+      <div class="testimonials-carousel">
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">
+            Hey bro hope you've been well. I've been meaning to message you. Thanks again for all your help in the lead up to HSC. You have been an amazing help and a great guy in general.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">HS</div>
+            <div>
+              <div class="testimonial-name">HSC Student</div>
+              <div class="testimonial-detail">Year 12</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <p class="testimonial-quote">
+            Huge shoutout to Jorjuos. The advice and feedback he's given me has genuinely helped my business studies skills grow. Simple, honest, and actually useful. Grateful for the guidance.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">BS</div>
+            <div>
+              <div class="testimonial-name">Business Studies Student</div>
+              <div class="testimonial-detail">Skills Growth</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <p class="testimonial-quote">
+            Today I had my first Business Studies tutoring session with Jorjuos and it was amazing! He's a great, efficient tutor who explained everything so clearly and connected it to real life, everyday examples that actually made it easy to understand. Super engaging and really helpful, I highly recommend!</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">BT</div>
+            <div>
+              <div class="testimonial-name">Business Studies Student</div>
+              <div class="testimonial-detail">First Session Review</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <p class="testimonial-quote">
+            Today I had my second lesson with Jorjuos, easily the best tutor I've been to. In 2 lessons I have transformed my writing skills and developed many new skills. Highly recommend!</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">WS</div>
+            <div>
+              <div class="testimonial-name">English Student</div>
+              <div class="testimonial-detail">Writing Skills Transformation</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <p class="testimonial-quote">
+            Hey Jorjuos, I just received my economics task 1. I received 54/60. Thank you very much for helping me, couldn't have done it without you!</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">EC</div>
+            <div>
+              <div class="testimonial-name">Economics Student</div>
+              <div class="testimonial-detail">54/60 — Task 1</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <p class="testimonial-quote">
+            I failed maths last year and failed all my exams and now on my first exam I got 85% and got an award from my teacher for doing good in class. Thank you, I highly recommend.</p>
+          <div class="testimonial-meta">
+            <div class="testimonial-avatar">MA</div>
+            <div>
+              <div class="testimonial-name">Maths Student</div>
+              <div class="testimonial-detail">Fail &rarr; 85% (Class avg: 55%)</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="text-center reveal" style="margin-top: 64px;">
+        <a href="#hero-form" class="cta-button">
+          I'm Ready to Act
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       ULTIMATUM — THE CHOICE
+  ============================ -->
+  <section class="ultimatum">
+    <div class="container">
+      <div class="ultimatum-header">
+        <h2 class="reveal">You Make The <span class="accent">Choice.</span></h2>
+      </div>
+      <div class="ultimatum-grid">
+
+        <div class="ultimatum-card ultimatum-card--left reveal">
+          <span class="ultimatum-icon">&#128247;</span>
+          <h3>Keep Doomscrolling</h3>
+          <p>Stay where you are. Same bad grades. Brain rotting on TikTok and Instagram for hours every day.</p>
+          <span class="ultimatum-link">
+            Nothing changes &rarr;
+          </span>
+        </div>
+
+        <div class="ultimatum-card ultimatum-card--right reveal reveal-delay-1">
+          <span class="ultimatum-icon">&#9889;</span>
+          <h3>Actually Take Action</h3>
+          <p>Get results that you're actually happy with. Make your parents proud. Get a mentor who's been where you are and knows exactly how to get you to where you need to be.</p>
+          <a href="#hero-form" class="ultimatum-link">
+            Get Started Now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER
+  ============================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <img src="logo.png" alt="Sterling Tutoring Group" class="footer-logo" />
+      <div class="footer-links">
+        <a href="mailto:info@sterlingtutoringgroup.com.au">Contact</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#results">Results</a>
+      </div>
+      <p class="footer-text">&copy; 2026 Sterling Tutoring Group. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Typeform Embed Script -->
+  <script src="https://embed.typeform.com/next/embed.js"></script>
+
+  <!-- ============================
+       SCROLL REVEAL + SMOOTH SCROLL
+  ============================ -->
+  <script>
+    // Intersection Observer for scroll reveals
+    (function() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            var navHeight = document.querySelector('.nav').offsetHeight;
+            var targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+            window.scrollTo({ top: targetPos, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // Nav background on scroll
+      var nav = document.querySelector('.nav');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          nav.style.background = 'rgba(10, 10, 10, 0.95)';
+        } else {
+          nav.style.background = 'rgba(10, 10, 10, 0.85)';
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
