@@ -171,17 +171,13 @@
 
     .nav-inner {
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       align-items: center;
-      height: 180px;
+      height: 80px;
     }
 
-    .nav-logo {
-      height: 150px;
-      width: auto;
-      background: rgba(255, 255, 255, 0.92);
-      padding: 10px 60px;
-      border-radius: 14px;
+    .nav-spacer {
+      flex: 1;
     }
 
     .nav-cta {
@@ -208,7 +204,7 @@
       min-height: 100vh;
       display: flex;
       align-items: center;
-      padding-top: 220px;
+      padding-top: 140px;
       padding-bottom: var(--section-padding);
       position: relative;
       overflow: hidden;
@@ -1035,7 +1031,7 @@
   ============================ -->
   <nav class="nav">
     <div class="container nav-inner">
-      <img src="logo.png" alt="Sterling Tutoring Group" class="nav-logo" />
+      <div class="nav-spacer"></div>
       <a href="#hero-form" class="nav-cta">Get Started</a>
     </div>
   </nav>
